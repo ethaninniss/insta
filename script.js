@@ -31,13 +31,13 @@ const test2 = function() {
 }
 // example for third step
 const profileData = {
-    handle: '',  
-    name: '',
-    DOB: '',
-    'profile picture':'',
-    numOfFollowers: 100,
-    numOfFollowing: 74,
-    bio: '',
+    handle: null,  
+    name: null,
+    DOB: null,
+    'profile picture': null,
+    numOfFollowers: 0,
+    numOfFollowing: 0,
+    bio: null,
 };
 
 console.log(profileData);
@@ -52,26 +52,50 @@ document.getElementById("myHandleButton").onclick = function() {
     // so setting the function equal to a variable makes it more efficient 
     profileData.handle = document.getElementById("myHandle").value;
     console.log(profileData);
-}
+    
+    document.getElementById("myHandleOutput").innerHTML = profileData.handle;
+};
 
 // once the button is clicked then this function will execute the code
 // the function saves the value that is entered, into the key that is called, which reassigns that key value
 document.getElementById("myNameButton").onclick = function() {
     profileData.name = document.getElementById("myName").value;
     console.log(profileData);
-}
+    
+    document.getElementById("myNameOutput").innerHTML = profileData.name;
+};
 
 document.getElementById("myDobButton").onclick = function() {
     profileData.DOB = document.getElementById("myDob").value;
     console.log(profileData);
-}
+    
+    document.getElementById("myDobOutput").innerHTML = profileData.DOB;
+};
 
 document.getElementById("myProfilePicButton").onclick = function() {
     profileData['profile picture'] = document.getElementById("myProfilePic").value;
     console.log(profileData);
-}
+    
+    document.getElementById("myProfilePicOutput").innerHTML = profileData['profile picture'];
+};
 
 document.getElementById("myBioButton").onclick = function() {
     profileData.bio = document.getElementById("myBio").value;
     console.log(profileData);
-}
+    
+    document.getElementById("myBioOutput").innerHTML = profileData.bio;
+};
+
+document.getElementById("myFollowerButton").onclick = function() {
+    profileData.numOfFollowers = profileData.numOfFollowers += 1;
+    console.log(profileData);
+    
+    document.getElementById("myFollowerCount").innerHTML = profileData.numOfFollowers;
+};
+
+document.getElementById("myFollowingButton").onclick = function() {
+    profileData.numOfFollowing = profileData.numOfFollowing += 1;
+    console.log(profileData);
+    
+    document.getElementById("myFollowingCount").innerHTML = profileData.numOfFollowing;
+};

@@ -69,6 +69,7 @@ const allUsers = {}
 
 console.log(profileData);
 
+
 document.getElementById("myFollowerButton").onclick = function() {
     profileData.numOfFollowers = profileData.numOfFollowers += 1;
     console.log(profileData);
@@ -86,20 +87,11 @@ document.getElementById("myFollowingButton").onclick = function() {
 document.getElementById("signup").onclick = function() {
 
     profileData.handle = document.getElementById("myHandle").value;
-    document.getElementById("myHandleOutput").innerHTML = profileData.handle;
-
     profileData.name = document.getElementById("myName").value;
-    document.getElementById("myNameOutput").innerHTML = profileData.name;
-
     profileData.DOB = document.getElementById("myDob").value;
-    document.getElementById("myDobOutput").innerHTML = profileData.DOB;
-
     profileData['profile picture'] = document.getElementById("myProfilePic").value;
-    document.getElementById("myProfilePicOutput").innerHTML = profileData['profile picture'];
-
     profileData.bio = document.getElementById("myBio").value;
-    document.getElementById("myBioOutput").innerHTML = profileData.bio;
-
+    
     allUsers[profileData.handle] = profileData;
 
     profileData = {
@@ -121,6 +113,12 @@ document.getElementById('signinButton').onclick = function() {
     // could put this in its own separate function
     for (let key in allUsers) {
         if (key === inputtedHandle) {
+            document.getElementById("myHandleOutput").innerHTML = allUsers[inputtedHandle].handle;
+            document.getElementById("myNameOutput").innerHTML = allUsers[inputtedHandle].name;
+            document.getElementById("myDobOutput").innerHTML = allUsers[inputtedHandle].DOB;
+            document.getElementById("myProfilePicOutput").innerHTML = allUsers[inputtedHandle]['profile picture'];
+            document.getElementById("myBioOutput").innerHTML = allUsers[inputtedHandle].bio;
+            
             console.log('yo');
             break;
         }

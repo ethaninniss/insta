@@ -18,3 +18,9 @@ Create a way of storing seperate accounts, research
 
 Once signed up, be able to save data into backend
 Then to sign in check if the handle or username inputted matches a user in the database
+
+Created multiple users through creating a new object that holds the handle which is the name of the users profile data
+
+Now try and delete the sumbit buttons so everything is inputted when pressing sign-up
+
+Next make a sign-in page 

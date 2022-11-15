@@ -55,7 +55,7 @@ const test2 = function() {
     console.log(profileData);
 }
 // example for third step
-const profileData = {
+let profileData = {
     handle: null,  
     name: null,
     DOB: null,
@@ -64,6 +64,8 @@ const profileData = {
     numOfFollowing: 0,
     bio: null,
 };
+
+const allUsers = {}
 
 console.log(profileData);
 
@@ -124,3 +126,20 @@ document.getElementById("myFollowingButton").onclick = function() {
     
     document.getElementById("myFollowingCount").innerHTML = profileData.numOfFollowing;
 };
+
+document.getElementById("signup").onclick = function() {
+    
+    allUsers[profileData.handle] = profileData;
+    
+    // profileData = {
+    //     handle: null,  
+    //     name: null,
+    //     DOB: null,
+    //     'profile picture': null,
+    //     numOfFollowers: 0,
+    //     numOfFollowing: 0,
+    //     bio: null,
+    // };
+    
+    console.log(allUsers)
+}

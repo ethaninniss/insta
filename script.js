@@ -1,5 +1,30 @@
 // example for first step
 
+// const users = {
+//     'javascriptguru': {
+//         handle: 'javascriptguru',
+//         name: 'js guru',
+//         DOB: 1 / 1 / 2000,
+//         'profile picture': 'pic.png',
+//         numOfFollowers: 100,
+//         numOfFollowing: 75,
+//         bio: 'i am a java script guru.'
+//     }
+// }
+
+// const user = users['javascriptguru']
+//  /* user = {
+//         handle: 'javascriptguru',
+//         name: 'js guru',
+//         DOB: 1 / 1 / 2000,
+//         'profile picture': 'pic.png',
+//         numOfFollowers: 100,
+//         numOfFollowing: 75,
+//         bio: 'i am a java script guru.'
+//     }
+//     */
+
+
 const test1 = function() {
     const profileData = {
         handle: 'javascriptguru',

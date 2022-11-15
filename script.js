@@ -51,12 +51,12 @@ const test2 = function() {
         numOfFollowing: 75,
         bio: window.prompt('Input a bio about you.')
     };
-    
+
     console.log(profileData);
 }
 // example for third step
 let profileData = {
-    handle: null,  
+    handle: null,
     name: null,
     DOB: null,
     'profile picture': null,
@@ -69,77 +69,48 @@ const allUsers = {}
 
 console.log(profileData);
 
-// like so
-// let myHandleInput = document.getElementById("myHandle").value;
-
-document.getElementById("myHandleButton").onclick = function() {
-    // can store this in a variable called myHandleInput outside of the function
-    // then just set profileData.handle = myHandleInput;
-    // this make the code run more efficiently; calling a function everytime we want to change th evalue isnt efficient 
-    // so setting the function equal to a variable makes it more efficient 
-    profileData.handle = document.getElementById("myHandle").value;
-    console.log(profileData);
-    
-    document.getElementById("myHandleOutput").innerHTML = profileData.handle;
-};
-
-// once the button is clicked then this function will execute the code
-// the function saves the value that is entered, into the key that is called, which reassigns that key value
-document.getElementById("myNameButton").onclick = function() {
-    profileData.name = document.getElementById("myName").value;
-    console.log(profileData);
-    
-    document.getElementById("myNameOutput").innerHTML = profileData.name;
-};
-
-document.getElementById("myDobButton").onclick = function() {
-    profileData.DOB = document.getElementById("myDob").value;
-    console.log(profileData);
-    
-    document.getElementById("myDobOutput").innerHTML = profileData.DOB;
-};
-
-document.getElementById("myProfilePicButton").onclick = function() {
-    profileData['profile picture'] = document.getElementById("myProfilePic").value;
-    console.log(profileData);
-    
-    document.getElementById("myProfilePicOutput").innerHTML = profileData['profile picture'];
-};
-
-document.getElementById("myBioButton").onclick = function() {
-    profileData.bio = document.getElementById("myBio").value;
-    console.log(profileData);
-    
-    document.getElementById("myBioOutput").innerHTML = profileData.bio;
-};
-
 document.getElementById("myFollowerButton").onclick = function() {
     profileData.numOfFollowers = profileData.numOfFollowers += 1;
     console.log(profileData);
-    
+
     document.getElementById("myFollowerCount").innerHTML = profileData.numOfFollowers;
 };
 
 document.getElementById("myFollowingButton").onclick = function() {
     profileData.numOfFollowing = profileData.numOfFollowing += 1;
     console.log(profileData);
-    
+
     document.getElementById("myFollowingCount").innerHTML = profileData.numOfFollowing;
 };
 
 document.getElementById("signup").onclick = function() {
-    
+
+    profileData.handle = document.getElementById("myHandle").value;
+    document.getElementById("myHandleOutput").innerHTML = profileData.handle;
+
+    profileData.name = document.getElementById("myName").value;
+    document.getElementById("myNameOutput").innerHTML = profileData.name;
+
+    profileData.DOB = document.getElementById("myDob").value;
+    document.getElementById("myDobOutput").innerHTML = profileData.DOB;
+
+    profileData['profile picture'] = document.getElementById("myProfilePic").value;
+    document.getElementById("myProfilePicOutput").innerHTML = profileData['profile picture'];
+
+    profileData.bio = document.getElementById("myBio").value;
+    document.getElementById("myBioOutput").innerHTML = profileData.bio;
+
     allUsers[profileData.handle] = profileData;
-    
-    // profileData = {
-    //     handle: null,  
-    //     name: null,
-    //     DOB: null,
-    //     'profile picture': null,
-    //     numOfFollowers: 0,
-    //     numOfFollowing: 0,
-    //     bio: null,
-    // };
-    
+
+    profileData = {
+        handle: null,  
+        name: null,
+        DOB: null,
+        'profile picture': null,
+        numOfFollowers: 0,
+        numOfFollowing: 0,
+        bio: null,
+    };
+
     console.log(allUsers)
 }

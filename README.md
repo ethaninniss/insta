@@ -24,3 +24,6 @@ Created multiple users through creating a new object that holds the handle which
 Now try and delete the sumbit buttons so everything is inputted when pressing sign-up
 
 Next make a sign-in page 
+Created sign in page, when signed in will update profile screen
+
+Now create a way for users to follow each other

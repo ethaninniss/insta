@@ -103,7 +103,7 @@ document.getElementById("signup").onclick = function() {
     allUsers[profileData.handle] = profileData;
 
     profileData = {
-        handle: null,  
+        handle: null,
         name: null,
         DOB: null,
         'profile picture': null,
@@ -112,5 +112,20 @@ document.getElementById("signup").onclick = function() {
         bio: null,
     };
 
+
     console.log(allUsers)
 }
+
+document.getElementById('signinButton').onclick = function() {
+    let inputtedHandle = document.getElementById('signin').value;
+    // could put this in its own separate function
+    for (let key in allUsers) {
+        if (key === inputtedHandle) {
+            console.log('yo');
+            break;
+        }
+        else {
+            window.prompt('wrong handle inputted');
+        }
+    }
+};

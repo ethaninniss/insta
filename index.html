@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div>
         <h1>Sign Up</h1>
 
@@ -57,13 +56,19 @@
         <label>following</label>
         <label id="myFollowingCount">0</label><br>
     </div>
+    
+    <div>
+        <h1>Search Bar</h1>
+        <button type="submit">Search</button>
+        
+    </div>
 
     <div>
         <h1>testing follower buttons</h1>
         <label>follower</label>
-        <button id="myFollowerButton" type="submit">+</button>
+        <button onclick="followerIncrementer()" type="submit">+</button>
         <label>following</label>
-        <button id="myFollowingButton" type="submit">+</button>
+        <button onclick="followingIncrementer()" type="submit">+</button>
     </div>
 
     <script type="text/javascript" src="script.js"></script>

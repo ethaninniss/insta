@@ -25,36 +25,6 @@
 //     */
 
 
-const test1 = function() {
-    const profileData = {
-        handle: 'javascriptguru',
-        name: 'js guru',
-        DOB: 1 / 1 / 2000,
-        'profile picture': 'pic.png',
-        numOfFollowers: 100,
-        numOfFollowing: 75,
-        bio: 'i am a java script guru.'
-    };
-
-    console.log(profileData);
-    console.log(profileData.bio);
-}
-// example for second step
-
-const test2 = function() {
-    const profileData = {
-        handle: window.prompt('what is your insta handle?'),
-        name: window.prompt('What is your name?'),
-        DOB: window.prompt('What is your DOB?'),
-        'profile picture': window.prompt('Link a profile pic.'),
-        numOfFollowers: 100,
-        numOfFollowing: 75,
-        bio: window.prompt('Input a bio about you.')
-    };
-
-    console.log(profileData);
-}
-// example for third step
 let profileData = {
     handle: null,
     name: null,
@@ -67,22 +37,23 @@ let profileData = {
 
 const allUsers = {}
 
-console.log(profileData);
 
 
-document.getElementById("myFollowerButton").onclick = function() {
+function followerIncrementer() {
     profileData.numOfFollowers = profileData.numOfFollowers += 1;
     console.log(profileData);
 
     document.getElementById("myFollowerCount").innerHTML = profileData.numOfFollowers;
 };
 
-document.getElementById("myFollowingButton").onclick = function() {
+function followingIncrementer() {
     profileData.numOfFollowing = profileData.numOfFollowing += 1;
     console.log(profileData);
 
     document.getElementById("myFollowingCount").innerHTML = profileData.numOfFollowing;
 };
+
+
 
 document.getElementById("signup").onclick = function() {
 
@@ -108,6 +79,8 @@ document.getElementById("signup").onclick = function() {
     console.log(allUsers)
 }
 
+
+
 document.getElementById('signinButton').onclick = function() {
     let inputtedHandle = document.getElementById('signin').value;
     // could put this in its own separate function
@@ -127,3 +100,5 @@ document.getElementById('signinButton').onclick = function() {
         }
     }
 };
+
+

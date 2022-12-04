@@ -25,5 +25,28 @@ Now try and delete the sumbit buttons so everything is inputted when pressing si
 
 Next make a sign-in page 
 Created sign in page, when signed in will update profile screen
+Make a way to edit profile while signed in
+
+Make use of `onclick` to reduce the repetition in the code
+
+```javascript
+function showLoc() {
+  const logLines = ["Property (Typeof): Value", `location (${typeof location}): ${location}`];
+  for (const prop in location) {
+    logLines.push(`${prop} (${typeof location[prop]}): ${location[prop] || "n/a"}`);
+  }
+  alert(logLines.join("\n"));
+}
+
+// in html: <button onclick="showLoc();">Show location properties</button>
+```
+
+Transfer from session storage to local storage
+
+Use commenting in code
+
+Create a way to seach for profiles to then interact
 
 Now create a way for users to follow each other
+
+

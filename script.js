@@ -102,3 +102,17 @@ document.getElementById('signinButton').onclick = function() {
 };
 
 
+
+function search() {
+    const filteredKeys = Object.keys(allUsers).filter(user => {
+        const string = document.getElementById('searchBarInput').value;
+        const regex = new RegExp(string, 'i');
+        regex.test(user) === true;
+    });
+    
+    filteredKeys.forEach(user => {
+        let resultP = document.createElement("p");
+        resultP.innerHTML = user;
+        document.querySelector('#search-result').append(resultP);
+    });
+}

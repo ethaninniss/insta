@@ -7,3 +7,7 @@ div {
     width: 500px;
     margin: auto;
 }
+
+.user-search-name{
+    cursor: pointer
+}

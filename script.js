@@ -23,19 +23,24 @@
 //         bio: 'i am a java script guru.'
 //     }
 //     */
+const users = [{}]
 
 
 let profileData = {
     handle: null,
     name: null,
     DOB: null,
+    bio: null,
     'profile picture': null,
     numOfFollowers: 0,
     numOfFollowing: 0,
-    bio: null,
+    followers: null,
+    following: null
 };
 
-const allUsers = {}
+const allUsers = {};
+
+let signedInUser;
 
 
 
@@ -69,12 +74,13 @@ document.getElementById("signup").onclick = function() {
         handle: null,
         name: null,
         DOB: null,
+        bio: null,
         'profile picture': null,
         numOfFollowers: 0,
         numOfFollowing: 0,
-        bio: null,
+        followers: null,
+        following: null
     };
-
 
     console.log(allUsers)
 }
@@ -92,6 +98,9 @@ document.getElementById('signinButton').onclick = function() {
             document.getElementById("myProfilePicOutput").innerHTML = allUsers[inputtedHandle]['profile picture'];
             document.getElementById("myBioOutput").innerHTML = allUsers[inputtedHandle].bio;
             
+            signedInUser = inputtedHandle;
+            console.log(signedInUser);
+            
             console.log('yo');
             break;
         }
@@ -102,17 +111,26 @@ document.getElementById('signinButton').onclick = function() {
 };
 
 
-
 function search() {
-    const filteredKeys = Object.keys(allUsers).filter(user => {
-        const string = document.getElementById('searchBarInput').value;
-        const regex = new RegExp(string, 'i');
-        regex.test(user) === true;
-    });
+    // const filteredKeys = Object.keys(allUsers).filter(user => {
+    //     const string = document.getElementById('searchBarInput').value;
+    //     const regex = new RegExp(string, 'i');
+    //     console.log(user);
+    //     regex.test(user) === true;
+    // });const searchResult = document.querySelector('#search-result')
+    const element = Array.from(document.getElementsByClassName("user-search-name"))
+    element.forEach(x => x.remove())
     
-    filteredKeys.forEach(user => {
+    Object.keys(allUsers).forEach(user => {
         let resultP = document.createElement("p");
         resultP.innerHTML = user;
-        document.querySelector('#search-result').append(resultP);
+        resultP.setAttribute("class", "user-search-name")
+        resultP.addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log("this is clicking");
+        })
+        const searchResult = document.getElementById("search-result")
+        
+        searchResult.appendChild(resultP);
     });
 }

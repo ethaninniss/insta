@@ -48,5 +48,7 @@ Use commenting in code
 Create a way to seach for profiles to then interact
 
 Now create a way for users to follow each other
-
+- Create a variable called `signedInUser`, that holds the user that wants to be signed
+- 
+- 
 
